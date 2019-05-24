@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="  Inicar Sesión  "
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="50dp"
+
+            android:onClick="IniciarSesion_Presionado"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/letra_principal"
+            android:text="  Registrarse  "
+            android:textColor="@android:color/white"
+            android:textSize="50dp"
+            android:onClick="Registro_Presionado"
+            android:id="@+id/btnRegistro"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/letra_principal"
+            android:text="  Anónimo  "
+            android:textColor="@android:color/white"
+            android:textSize="50dp"
+            android:onClick="Anonimo_Presionado"/>
+
+
+
+
+
+
+
+</LinearLayout>

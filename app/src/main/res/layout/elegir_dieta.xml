@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" android:baselineAligned="false">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=" Elegir Dieta "
+        android:fontFamily="@font/letra_principal"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@drawable/rounded_textview"
+        android:textSize="80dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/vegano" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        android:text="Soy vegano"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="30dp"
+        android:onClick="SoyVegano_Presionado"
+        android:id="@+id/vegano"/>
+
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/vegetariano" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        android:text="Soy vegetariano"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="30dp"
+        android:onClick="SoyVegetariano_Presionado"
+        android:id="@+id/vegetariano"/>
+
+
+</LinearLayout>

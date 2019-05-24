@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  E-Mail  "
+        android:textSize="50dp"
+        android:id="@+id/email"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@drawable/rounded_edittext"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Contraseña  "
+        android:textSize="50dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:id="@+id/password"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        android:text="  Completar Registro  "
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="50dp"
+        android:onClick="RegistroCompleto_Presionado"
+        android:id="@+id/btnRegistroCompleto"/>
+
+
+</LinearLayout>
