@@ -1,10 +1,13 @@
 package com.example.healthme;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,22 +22,38 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ListaUsuarios extends AppCompatActivity {
-
-    ArrayList<String> listaUsuarios;
     ListView miListaDeUsuarios;
     ArrayAdapter miAdaptador;
+    HashMap<Integer, Usuario> listaUsuarios;
+
+    AdapterView.OnItemClickListener escuhadorPorListView = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView parent, View view, int usuarioSeleccionado, long id) {
+            Log.d("test", "SADFSDOGISBHIGUOSDBNGIU");
+            Bundle paquete = new Bundle();
+
+            paquete.putSerializable("usuario", listaUsuarios.get(usuarioSeleccionado));
+
+            Intent actividadDetalleUsuario = new Intent(ListaUsuarios.this, DetalleUsuario.class);
+            actividadDetalleUsuario.putExtras(paquete);
+
+            startActivity(actividadDetalleUsuario);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_usuarios);
-        listaUsuarios = new ArrayList<>();
+        listaUsuarios = new HashMap<>();
         miListaDeUsuarios = findViewById(R.id.miListaDeUsuarios);
-        miAdaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaUsuarios);
+        miListaDeUsuarios.setOnItemClickListener(escuhadorPorListView);
         tareaAsincronica miTarea = new tareaAsincronica();
         miTarea.execute();
+
 
         Log.d("AccesoApi", "Termine la ejecucion");
     }
@@ -51,20 +70,20 @@ public class ListaUsuarios extends AppCompatActivity {
     public void procesarJSONleido(InputStreamReader streamLeido) {
         Log.d("LecturaJSON","eNTRO");
         try {
-            JSONArray listaUsuarios = new JSONArray(jsonToString(streamLeido));
+            JSONArray listaUsuariosJSON = new JSONArray(jsonToString(streamLeido));
 
-            for(int i = 0; i < listaUsuarios.length(); i++){
+            for(int i = 0; i < listaUsuariosJSON.length(); i++){
 
-                JSONObject usuario = listaUsuarios.getJSONObject(i);
+                JSONObject jsonUsuario = listaUsuariosJSON.getJSONObject(i);
+                Usuario usuario = new Usuario(jsonUsuario.getInt("IdUsuario"),
+                        jsonUsuario.getString("Nombre"),
+                        jsonUsuario.getString("Apellido"),
+                        jsonUsuario.getString("Email"),
+                        jsonUsuario.getString("NomUsuario"));
 
-                Log.d("A", usuario.getString("IdUsuario"));
-                Log.d("A", usuario.getString("Apellido"));
-                Log.d("A", usuario.getString("Nombre"));
-                Log.d("A", usuario.getString("NomUsuario"));
-                Log.d("A", usuario.getString("Email"));
-
-
+                listaUsuarios.put(i, usuario);
             }
+
 
 
         } catch (Exception error) {
@@ -108,9 +127,13 @@ public class ListaUsuarios extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
+            ArrayList<String> nombresDeUsuario = new ArrayList<>();
+            for(Usuario u : listaUsuarios.values()){
+                nombresDeUsuario.add(u.getNombreUsuario());
+            }
+            miAdaptador = new ArrayAdapter<>(ListaUsuarios.this, android.R.layout.simple_list_item_1, nombresDeUsuario);
             miListaDeUsuarios.setAdapter(miAdaptador);
-
         }
-
     }
 }
