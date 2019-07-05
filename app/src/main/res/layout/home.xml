@@ -5,9 +5,20 @@
     android:orientation="vertical"
     android:background="@drawable/fondocomidita">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
+
+
+    <Button
+        android:id="@+id/img3"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@drawable/camarones"
+        android:onClick="Img3_Presionada"
+        android:scaleType="fitCenter"
+        android:src="@drawable/camarones"
+        android:tag="img3"
+
+        />
 
     <Button
         android:drawableLeft="@drawable/fish"
@@ -21,4 +32,18 @@
         android:tag="img1"
 
         />
+
+    <Button
+        android:drawableLeft="@drawable/pampa"
+        android:id="@+id/img2"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_horizontal"
+        android:onClick="Img2_Presionada"
+        android:src="@drawable/pampa"
+        android:tag="img2"
+
+        />
+
 </LinearLayout>

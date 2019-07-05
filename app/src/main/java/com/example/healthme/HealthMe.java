@@ -12,10 +12,11 @@ public class HealthMe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.health_me);
     }
-        void Iniciar_Presionado(View inc){
-            Intent intent = new Intent(HealthMe.this, RegistroLogin.class);
-            startActivity(intent);
-        }
+
+    void Iniciar_Presionado(View inc){
+        Intent intent = new Intent(HealthMe.this, RegistroLogin.class);
+        startActivity(intent);
+    }
     void Info_Presionado(View info){
         Intent intent = new Intent(HealthMe.this, Info.class);
         startActivity(intent);
