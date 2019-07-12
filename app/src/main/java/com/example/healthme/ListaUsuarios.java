@@ -1,4 +1,4 @@
-package com.example.healthme;
+/*package com.example.healthme;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -79,7 +79,8 @@ public class ListaUsuarios extends AppCompatActivity {
                         jsonUsuario.getString("Nombre"),
                         jsonUsuario.getString("Apellido"),
                         jsonUsuario.getString("Email"),
-                        jsonUsuario.getString("NomUsuario"));
+                        jsonUsuario.getString("NomUsuario")),
+                        jsonUsuario.getString("Password");
 
                 listaUsuarios.put(i, usuario);
             }
@@ -136,4 +137,5 @@ public class ListaUsuarios extends AppCompatActivity {
             miListaDeUsuarios.setAdapter(miAdaptador);
         }
     }
-}
+
+}*/
