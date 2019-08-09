@@ -16,6 +16,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.MissingResourceException;
 import java.util.Vector;
+import com.google.gson.*;
+
 
 
 public class Login extends AppCompatActivity {
@@ -41,6 +43,11 @@ public class Login extends AppCompatActivity {
         if (DatosValidos()) {
             tareaAsincronica miTarea = new tareaAsincronica();
             miTarea.execute();
+
+            Intent intent = new Intent(Login.this, Home.class);
+            startActivity(intent);
+
+
         }
     }
 
@@ -63,6 +70,8 @@ public class Login extends AppCompatActivity {
     class tareaAsincronica extends AsyncTask<Void, Void, Void> {
         String Email = EmailUsuario.getText().toString();
         String Pass = passwordUsuario.getText().toString();
+        String mail;
+        String pass;
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -73,9 +82,18 @@ public class Login extends AppCompatActivity {
                 Log.d("AccesoApi", "Me Conecto");
                 if (miConexion.getResponseCode() == 200) {
                     Log.d("AccesoApi", "Conexion Ok");
+                    Log.d("AccesoApi", miRuta.getPath());
                     InputStream cuerpoRespuesta = miConexion.getInputStream();
                     InputStreamReader lectorRespuesta = new InputStreamReader(cuerpoRespuesta, "UTF-8");
-                    procesarJSONleido(lectorRespuesta);
+                    JsonReader JSONleido = new JsonReader(lectorRespuesta);
+                    JsonParser parseadorDeJson;
+                    parseadorDeJson = new JsonParser();
+                    JsonObject objJson;
+                    objJson = parseadorDeJson.parse(lectorRespuesta).getAsJsonObject();
+                    mail = objJson.get("Email").getAsString();
+                    pass = objJson.get("Password").getAsString();
+                    Log.d("Datos", mail);
+                    Log.d("Datos", pass);
                 } else {
                     Log.d("AccesoApi", "error");
                 }
@@ -92,29 +110,14 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-        }
-    }
 
-    public void procesarJSONleido(InputStreamReader streamLeido) {
-        JsonReader JSONleido = new JsonReader(streamLeido);
-        try {
-            JSONleido.beginObject();
-            while (JSONleido.hasNext()) {
-                String nombreElementoActual = JSONleido.nextName();
-                if (nombreElementoActual.equals("Email")) {
-                    String mail = JSONleido.nextString();
-                    if (mail.length() == 0) {
-                        Log.d("test", "muy mal");
-                    } else {
-                        Log.d("test", "muy bien");
-                    }
-                } else {
-                    JSONleido.skipValue();
-                }
+            if (EmailUsuario.getText().toString() == mail && passwordUsuario.getText().toString() == pass) {
+                IniciarSesionCompleto_Presionado(null);
+
             }
-        } catch (Exception error) {
-            Log.d("LecturaJSON", "hubo un error" + error.getMessage());
         }
+
+
     }
 }
 
