@@ -9,6 +9,7 @@ import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -40,12 +41,12 @@ public class Login extends AppCompatActivity {
     }
 
     void IniciarSesionCompleto_Presionado(View info) {
+        Log.d("INICIAR","a");
+
         if (DatosValidos()) {
             tareaAsincronica miTarea = new tareaAsincronica();
             miTarea.execute();
 
-            Intent intent = new Intent(Login.this, Home.class);
-            startActivity(intent);
 
 
         }
@@ -110,10 +111,23 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            if (mail != "" && pass != "") {
+                Log.d("Valido",EmailUsuario.getText().toString());
+                Log.d("Valido",passwordUsuario.getText().toString());
 
-            if (EmailUsuario.getText().toString() == mail && passwordUsuario.getText().toString() == pass) {
-                IniciarSesionCompleto_Presionado(null);
 
+                Intent intent = new Intent(Login.this, Home.class);
+                startActivity(intent);
+
+            }else{
+
+                Toast error =
+                        Toast.makeText(getApplicationContext(),
+                                "Datos Erronéos", Toast.LENGTH_LONG);
+
+
+
+                error.show();
             }
         }
 
