@@ -27,10 +27,13 @@ public class FragmentRecetas extends Fragment {
     ListView MiListaDeRecetas;
     String Nombre;
     ArrayList<Recetas> listRecetas = new ArrayList<Recetas>();
+    adaptadorRecetas adaptadorRecetas;
 
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
         View VistaADevolver;
         VistaADevolver = inflador.inflate(R.layout.lv_recetas, grupo, false);
+
+        adaptadorRecetas = new adaptadorRecetas(listRecetas, VistaADevolver.getContext());
 
 
 
@@ -65,7 +68,7 @@ public class FragmentRecetas extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                Log.d("eskere", Nombre);
+                Log.d("nombre", Nombre);
                 String MiPc="10.0.2.2:50197";
                 URL Ruta = new URL("http://" + MiPc + "/api/TraerRecetas/" + Nombre);
                 HttpURLConnection miConexion = (HttpURLConnection) Ruta.openConnection();
@@ -83,11 +86,10 @@ public class FragmentRecetas extends Fragment {
                         recetas._nombre = jsonRec.get("Nombre").getAsString();
                         recetas._tiempo = jsonRec.get("Tiempo").getAsString();
                         recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        recetas._calorías = jsonRec.get("Calorías").getAsString();
-                        recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
-                        recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
-                        recetas._id = jsonRec.get("Id").getAsInt();
+                       // recetas._calorías = jsonRec.get("Calorías").getAsString();
+                        //recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
+                       // recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
+                        //recetas._id = jsonRec.get("Id").getAsInt();
                         listRecetas.add(recetas);
                         Log.d("Recetas", recetas._nombre);
                     }
@@ -103,7 +105,10 @@ public class FragmentRecetas extends Fragment {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+            Log.d("eskere", ""+listRecetas.size());
             super.onPostExecute(aVoid);
+            MiListaDeRecetas.setAdapter(adaptadorRecetas);
+
         }
 
     }

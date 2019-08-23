@@ -18,6 +18,7 @@ public class Home extends AppCompatActivity {
     FragmentTransaction transacFragment;
     Fragment fragmentRecetasPorNombre;
     Fragment fragmentRecetas;
+    adaptadorRecetas adaptadorRecetas;
 
 
     @Override

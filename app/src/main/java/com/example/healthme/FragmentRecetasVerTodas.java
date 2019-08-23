@@ -62,7 +62,7 @@ public class FragmentRecetasVerTodas extends Fragment {
             try {
 
                 String MiPc="10.0.2.2:50197";
-                URL Ruta = new URL("http://" + MiPc + "/api/ObtenerRecetas/" );
+                URL Ruta = new URL("http://" + MiPc + "/api/ObtenerRecetas/");
                 HttpURLConnection miConexion = (HttpURLConnection) Ruta.openConnection();
                 if (miConexion.getResponseCode() == 200) {
                     InputStream stream = miConexion.getInputStream();
@@ -78,11 +78,11 @@ public class FragmentRecetasVerTodas extends Fragment {
                         recetas._nombre = jsonRec.get("Nombre").getAsString();
                         recetas._tiempo = jsonRec.get("Tiempo").getAsString();
                         recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        recetas._calorías = jsonRec.get("Calorías").getAsString();
-                        recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
-                        recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
-                        recetas._id = jsonRec.get("Id").getAsInt();
+                        //recetas._calorías = jsonRec.get("Calorías").getAsString();
+                        //recetas._imagen = jsonRec.get("Imagen").getAsString();
+                        //recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
+                        //recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
+                        //recetas._id = jsonRec.get("Id").getAsInt();
                         listRecetas.add(recetas);
                         Log.d("Recetas", recetas._nombre);
                     }
