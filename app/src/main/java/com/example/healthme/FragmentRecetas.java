@@ -1,8 +1,10 @@
+package com.example.healthme;
+
+import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.healthme.Home;
-import com.example.healthme.R;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -22,23 +22,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Recetas extends Fragment {
-    public String _id;
-    public String _nombre;
-    public String _descripción;
-    public String _calorías;
-    public String _tiempo;
-    public String _imagen;
-    public String _IdDificiltad;
-    public String _IdUsuario;
+public class FragmentRecetas extends Fragment {
 
     ListView MiListaDeRecetas;
     String Nombre;
     ArrayList<Recetas> listRecetas = new ArrayList<Recetas>();
 
-    public Recetas() {
-
-    }
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
         View VistaADevolver;
         VistaADevolver = inflador.inflate(R.layout.lv_recetas, grupo, false);
@@ -46,8 +35,7 @@ public class Recetas extends Fragment {
 
 
 
-
-        MiListaDeRecetas = new VistaADevolver.findViewById(R.id.ListViewRecetas);
+        MiListaDeRecetas = VistaADevolver.findViewById(R.id.ListViewRecetas);
 
         MiListaDeRecetas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -57,8 +45,8 @@ public class Recetas extends Fragment {
             }
         });
 
-        Recetas.tareaAsincronicaRecetas buscarRecetas = new Recetas().tareaAsincronicaRecetas(Nombre);
-        buscarRecetas.execute();
+        tareaAsincronicaRecetas buscarRecetasPorNombre = new tareaAsincronicaRecetas(Nombre);
+        buscarRecetasPorNombre.execute();
 
 
         return VistaADevolver;
@@ -79,7 +67,7 @@ public class Recetas extends Fragment {
             try {
                 Log.d("eskere", Nombre);
                 String MiPc="10.0.2.2:50197";
-                URL Ruta = new URL("http://" + MiPc + "/api/ObtenerRecetas/" + Nombre);
+                URL Ruta = new URL("http://" + MiPc + "/api/TraerRecetas/" + Nombre);
                 HttpURLConnection miConexion = (HttpURLConnection) Ruta.openConnection();
                 if (miConexion.getResponseCode() == 200) {
                     InputStream stream = miConexion.getInputStream();
@@ -99,7 +87,7 @@ public class Recetas extends Fragment {
                         recetas._imagen = jsonRec.get("Imagen").getAsString();
                         recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
                         recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
-                        recetas._id = jsonRec.get("Id").getAsString();
+                        recetas._id = jsonRec.get("Id").getAsInt();
                         listRecetas.add(recetas);
                         Log.d("Recetas", recetas._nombre);
                     }
@@ -120,4 +108,3 @@ public class Recetas extends Fragment {
 
     }
 }
-
