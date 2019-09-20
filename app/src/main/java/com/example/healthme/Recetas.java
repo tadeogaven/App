@@ -27,12 +27,12 @@ public class Recetas  {
     public String _nombre;
     public String _descripción;
     public String _calorías;
-    public int _tiempo;
+    public String _tiempo;
     public String _imagen;
     public String _IdDificiltad;
     public String _IdUsuario;
 
-    public Recetas(int id, String nombre, String descripción, String  calorías, int tiempo, String imagen, String idDificultad, String idUsuario){
+    public Recetas(int id, String nombre, String descripción, String  calorías, String tiempo, String imagen, String idDificultad, String idUsuario){
         _id = id;
         _nombre = nombre;
         _descripción=descripción;
@@ -61,7 +61,7 @@ public class Recetas  {
         return _calorías;
     }
 
-    public int getTiempo() {return _tiempo;}
+    public String getTiempo() {return _tiempo;}
 
     public String getImagen() {
         return _imagen;

@@ -61,9 +61,9 @@ public class adaptadorRecetas extends BaseAdapter {
         TextView NombreReceta;
         NombreReceta = (TextView) VistaADevolver.findViewById(R.id.nombre);
         NombreReceta.setText(Nombre);
-        TextView Usuario;
-        Usuario = (TextView) VistaADevolver.findViewById(R.id.tiempo);
-        Usuario.setText(Usuario.toString());
+        TextView TiempoRec;
+        TiempoRec = (TextView) VistaADevolver.findViewById(R.id.tiempo);
+        TiempoRec.setText(TiempoRec.toString());
 
         final ImageView ImagenReceta;
         ImagenReceta = (ImageView) VistaADevolver.findViewById(R.id.imagen);
