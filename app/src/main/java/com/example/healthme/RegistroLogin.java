@@ -27,6 +27,9 @@ public class RegistroLogin extends AppCompatActivity {
     void Anonimo_Presionado (View Anonimo){
         Intent intent = new Intent(RegistroLogin.this, Home.class);
         startActivity(intent);
+
+
+
     }
 
 }

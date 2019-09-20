@@ -31,10 +31,11 @@ public class FragmentRecetas extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
         View VistaADevolver;
+        Log.d("eskere", "1");
         VistaADevolver = inflador.inflate(R.layout.lv_recetas, grupo, false);
-
+        Log.d("eskere", "2");
         adaptadorRecetas = new adaptadorRecetas(listRecetas, VistaADevolver.getContext());
-
+        Log.d("eskere", "3");
 
 
 
@@ -51,7 +52,7 @@ public class FragmentRecetas extends Fragment {
         tareaAsincronicaRecetas buscarRecetasPorNombre = new tareaAsincronicaRecetas(Nombre);
         buscarRecetasPorNombre.execute();
 
-
+        Log.d("eskere", "5");
         return VistaADevolver;
     }
 

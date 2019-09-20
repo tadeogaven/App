@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class Home extends AppCompatActivity {
         adminFragment = getFragmentManager();
         fragmentRecetasPorNombre = new FragmentRecetas();
         fragmentRecetas = new FragmentRecetasVerTodas();
+        VerTodas();
     }
 
     public void Buscar (View vista){
@@ -40,7 +42,8 @@ public class Home extends AppCompatActivity {
         transacFragment.commit();
     }
 
-    public void VerTodas(View vista){
+    public void VerTodas(){
+        Log.d("eskere", "VerTodas");
         transacFragment = adminFragment.beginTransaction();
         transacFragment.replace(R.id.FragmentHome, fragmentRecetas);
         transacFragment.commit();
