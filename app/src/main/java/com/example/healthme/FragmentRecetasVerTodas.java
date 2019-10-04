@@ -27,6 +27,8 @@ public class FragmentRecetasVerTodas extends Fragment {
     ListView MiListaDeRecetas;
     ArrayList<Recetas> listRecetas = new ArrayList<Recetas>();
     adaptadorRecetas adaptadorRecetas;
+    Home home;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
@@ -40,9 +42,10 @@ public class FragmentRecetasVerTodas extends Fragment {
         MiListaDeRecetas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Recetas recetas = listRecetas.get(position);
-
-            }
+                    Recetas recetas = new Recetas();
+                    recetas = listRecetas.get(position);
+                    home.ProcesarDatosRecibidos(recetas._nombre);
+                }
         });
 
         tareaAsincronicaRecetas buscarRecetas = new tareaAsincronicaRecetas();
@@ -76,10 +79,15 @@ public class FragmentRecetasVerTodas extends Fragment {
                         //recetas._calorías = jsonRec.get("Calorías").getAsString();
                         //recetas._imagen = jsonRec.get("Imagen").getAsString();
                         //recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
-                        //recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
+                        recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
+                        recetas._descripción = jsonRec.get("Descripcion").getAsString();
                         // recetas._id = jsonRec.get("Id").getAsInt();
                         listRecetas.add(recetas);
                         Log.d("Recetas", recetas._nombre);
+                        Log.d("Recetas", recetas._tiempo);
+                        Log.d("Recetas", recetas._IdUsuario);
+
+
                     }
                 }
                 miConexion.disconnect();

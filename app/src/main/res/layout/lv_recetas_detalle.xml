@@ -3,44 +3,82 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imagen"
         />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="100dp"
+            android:text=""
+            android:id="@+id/descripcion"/>
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="30dp"
+        android:textSize="100dp"
         android:text=""
         android:id="@+id/nombre"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textSize="20dp"
+        android:text="dsdsd"
+        android:id="@+id/tiempo"
+        android:layout_marginTop="20dp"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="20dp"
-        android:text=""
-        android:id="@+id/tiempo"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="15dp"
-        android:text=""
-        android:id="@+id/usuario"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="15dp"
         android:layout_margin="20dp"
-        android:text=""
+        android:text="ddasds"
         android:id="@+id/dificultad"
         android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textSize="15dp"
+        android:text="dadsddds"
+        android:layout_marginTop="20dp"
+        android:id="@+id/usuario"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="15dp"
+            android:text="dadsddds"
+            android:layout_marginTop="20dp"
+            android:id="@+id/calorias"/>
+    </LinearLayout>
+
 
 </LinearLayout>

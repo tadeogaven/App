@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.example.healthme.R;
 import com.example.healthme.Recetas;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -57,13 +59,17 @@ public class adaptadorRecetas extends BaseAdapter {
         String Nombre = recetaActual._nombre;
         String Tiempo = recetaActual._tiempo;
         String Imagen = recetaActual._imagen;
+        String  Descripcion = recetaActual._descripción;
 
         TextView NombreReceta;
         NombreReceta = (TextView) VistaADevolver.findViewById(R.id.nombre);
         NombreReceta.setText(Nombre);
         TextView TiempoRec;
         TiempoRec = (TextView) VistaADevolver.findViewById(R.id.tiempo);
-        TiempoRec.setText(TiempoRec.toString());
+        TiempoRec.setText(Tiempo);
+        TextView Desc;
+        Desc =(TextView) VistaADevolver.findViewById(R.id.desc);
+        Desc.setText(Descripcion);
 
         final ImageView ImagenReceta;
         ImagenReceta = (ImageView) VistaADevolver.findViewById(R.id.imagen);
