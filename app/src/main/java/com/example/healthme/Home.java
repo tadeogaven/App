@@ -24,12 +24,13 @@ public class Home extends AppCompatActivity {
     adaptadorRecetas adaptadorRecetas;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        buscar=findViewById(R.id.Buscar);
+        //buscar=findViewById(R.id.Buscar);
 
         adminFragment = getFragmentManager();
         fragmentRecetasPorNombre = new FragmentRecetas();
@@ -54,10 +55,18 @@ public class Home extends AppCompatActivity {
         transacFragment.commit();
     }
 
-    public void ProcesarDatosRecibidos (String nombreRec){
-        nombre = nombreRec;
+    public void ProcesarDatosRecibidos (Recetas laReceta){
+        //nombre = nombreRec;
         transacFragment = adminFragment.beginTransaction();
         transacFragment.replace(R.id.FragmentHome, fragmentReceta_Detalle);
+        transacFragment.commit();
+        ((FragmentReceta_Detalle)fragmentReceta_Detalle).setNombre(laReceta);
+    }
+
+    private void crearFragnent(int id, Fragment fragment, String tag) {
+        adminFragment = getFragmentManager();
+        transacFragment = adminFragment.beginTransaction();
+        transacFragment.replace(id,fragment,tag);
         transacFragment.commit();
     }
 

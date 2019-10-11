@@ -23,13 +23,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class FragmentRecetasVerTodas extends Fragment {
+public class FragmentRecetasVerTodas extends Fragment implements View.OnClickListener {
     ListView MiListaDeRecetas;
     ArrayList<Recetas> listRecetas = new ArrayList<Recetas>();
     adaptadorRecetas adaptadorRecetas;
-    Home home;
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
         View VistaADevolver;
@@ -44,7 +41,7 @@ public class FragmentRecetasVerTodas extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Recetas recetas = new Recetas();
                     recetas = listRecetas.get(position);
-                    home.ProcesarDatosRecibidos(recetas._nombre);
+                ((Home)getActivity()).ProcesarDatosRecibidos(recetas);
                 }
         });
 
@@ -53,6 +50,11 @@ public class FragmentRecetasVerTodas extends Fragment {
 
 
         return VistaADevolver;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     public class tareaAsincronicaRecetas extends AsyncTask<Void, Void, Void> {

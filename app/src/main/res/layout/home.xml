@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@drawable/fondocomidita">
 
-    <RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+   <!-- <RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
         <EditText android:id="@+id/Buscar"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
@@ -18,7 +18,7 @@
             android:layout_toRightOf="@id/Buscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    </RelativeLayout>
+    </RelativeLayout> -->
 
 
     

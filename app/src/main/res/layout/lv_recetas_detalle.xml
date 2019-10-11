@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="100dp"
+            android:textSize="10dp"
             android:text=""
             android:id="@+id/descripcion"/>
         </LinearLayout>
@@ -34,8 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="100dp"
-        android:text=""
+        android:textSize="20dp"
         android:id="@+id/nombre"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +46,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="20dp"
-        android:text="dsdsd"
         android:id="@+id/tiempo"
         android:layout_marginTop="20dp"
         />
@@ -58,7 +56,6 @@
         android:layout_gravity="center"
         android:textSize="20dp"
         android:layout_margin="20dp"
-        android:text="ddasds"
         android:id="@+id/dificultad"
         android:layout_marginTop="20dp"/>
 
@@ -67,7 +64,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:textSize="15dp"
-        android:text="dadsddds"
         android:layout_marginTop="20dp"
         android:id="@+id/usuario"/>
         <TextView
@@ -75,7 +71,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:textSize="15dp"
-            android:text="dadsddds"
             android:layout_marginTop="20dp"
             android:id="@+id/calorias"/>
     </LinearLayout>

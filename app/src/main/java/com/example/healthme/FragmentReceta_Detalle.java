@@ -20,12 +20,16 @@ public class FragmentReceta_Detalle extends Fragment {
     TextView calorias;
     TextView descripcion;
     String nombreReceta;
-    Recetas recetas;
     Home home;
+    View vistaADevolver;
+
+    public void setNombre(Recetas laReceta) {
+        receta = laReceta;
+    }
 
     public View onCreateView (LayoutInflater infladorDeLayout, ViewGroup grupo, Bundle Datos){
 
-        View vistaADevolver;
+
         vistaADevolver = infladorDeLayout.inflate(R.layout.lv_recetas_detalle, grupo, false);;
 
         home = (Home) getActivity();
@@ -38,6 +42,7 @@ public class FragmentReceta_Detalle extends Fragment {
         usuario = vistaADevolver.findViewById(R.id.usuario);
         descripcion = vistaADevolver.findViewById(R.id.descripcion);
 
+        imagen.setImageBitmap(receta._imagen);
         descripcion.setText(receta._descripción);
         nombre.setText(receta._nombre);
         tiempo.setText(receta._tiempo);
@@ -46,7 +51,14 @@ public class FragmentReceta_Detalle extends Fragment {
         nombre.setText(receta._nombre);
         usuario.setText(receta._IdUsuario);
 
+
+
         return vistaADevolver;
+
+
     }
 
+
 }
+
+
