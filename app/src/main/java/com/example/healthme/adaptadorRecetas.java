@@ -24,7 +24,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class adaptadorRecetas extends BaseAdapter {
-
+        public Bitmap imagen;
     private ArrayList<Recetas> ListRecetas;
     private Context Contexto;
 
@@ -58,7 +58,7 @@ public class adaptadorRecetas extends BaseAdapter {
         Recetas recetaActual = getItem(Position);
         String Nombre = recetaActual._nombre;
         String Tiempo = recetaActual._tiempo;
-        String Imagen = recetaActual._imagen;
+        final String Imagen = recetaActual._imagen;
         String  Descripcion = recetaActual._descripción;
 
         TextView NombreReceta;
@@ -76,7 +76,7 @@ public class adaptadorRecetas extends BaseAdapter {
 
         final class descargarImagen extends AsyncTask<String, Void, Bitmap> {
             protected Bitmap doInBackground(String... ruta){
-                Bitmap imagen;
+
                 imagen = null;
                 try{
                     URL miRuta;
@@ -99,6 +99,16 @@ public class adaptadorRecetas extends BaseAdapter {
                     ImagenReceta.setImageBitmap(imagen);
                 } else{
                     ImagenReceta.setImageResource(android.R.drawable.ic_dialog_alert);
+                }
+            }
+
+            public void applyImage(View view) {
+                try {
+                    if(imagen==null)
+                        imagen = this.get();
+                    ((ImageView) view.findViewById(R.id.imagen)).setImageBitmap(imagen);
+                } catch (Exception e) {
+                    Log.d("movie","Failed to download image: "+e.getMessage());
                 }
             }
         }
