@@ -21,4 +21,10 @@ public class HealthMe extends AppCompatActivity {
         Intent intent = new Intent(HealthMe.this, Info.class);
         startActivity(intent);
     }
+
+
+    void Crear_Presionado(View crear){
+        Intent intent = new Intent(HealthMe.this, CrearReceta.class);
+        startActivity(intent);
+    }
 }

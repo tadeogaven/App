@@ -15,6 +15,7 @@ public class Home extends AppCompatActivity {
 
     EditText buscar;
     Button boton;
+    Button botoncrear;
     String nombre;
     FragmentManager adminFragment;
     FragmentTransaction transacFragment;
@@ -29,6 +30,10 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+
+
+
 
         //buscar=findViewById(R.id.Buscar);
 

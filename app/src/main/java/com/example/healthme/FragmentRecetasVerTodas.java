@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.JsonArray;
@@ -24,11 +25,16 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class FragmentRecetasVerTodas extends Fragment implements View.OnClickListener {
+
     ListView MiListaDeRecetas;
     ArrayList<Recetas> listRecetas = new ArrayList<Recetas>();
     adaptadorRecetas adaptadorRecetas;
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflador, @Nullable ViewGroup grupo, @Nullable Bundle pack) {
+
+
         View VistaADevolver;
         VistaADevolver = inflador.inflate(R.layout.lv_recetas, grupo, false);
 

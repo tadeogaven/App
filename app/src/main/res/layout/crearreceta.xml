@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Agregar Imagen  "
+        android:textSize="50dp"
+        android:id="@+id/imagenreceta"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@drawable/rounded_edittext"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Nombre de la receta  "
+        android:textSize="50dp"
+        android:id="@+id/nombrereceta"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@drawable/rounded_edittext"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <EditText
+        android:id="@+id/duracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  duracion  "
+        android:textSize="50dp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Descripcion  "
+        android:textSize="50dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+
+    <CheckBox
+        android:id="@+id/chbx"
+        android:layout_width="226dp"
+        android:layout_height="77dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
+        android:hint=" Vegetariana "
+        android:textSize="20dp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+
+
+
+</LinearLayout>

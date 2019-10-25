@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -27,4 +27,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/FragmentHome"></FrameLayout>
 
-</LinearLayout>
+    <ImageButton
+        android:layout_alignBottom="@id/FragmentHome"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/FragmentHome"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fish"
+        />
+
+
+</RelativeLayout>
