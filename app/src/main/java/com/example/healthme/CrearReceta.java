@@ -17,8 +17,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import org.json.JSONObject;
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,6 +30,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -43,8 +47,10 @@ public class CrearReceta extends AppCompatActivity {
         nombre1=findViewById(R.id.nombrereceta);
         tiempo1=findViewById(R.id.duracion);
 
-        String nombre, descripcion,tiempo;
+    }
 
+    public void Enviar(View enviar) {
+        String nombre, descripcion,tiempo;
         nombre=nombre1.getText().toString();
         descripcion=descripcion1.getText().toString();
         tiempo=tiempo1.getText().toString();
@@ -52,30 +58,29 @@ public class CrearReceta extends AppCompatActivity {
         rec._nombre=nombre;
         rec._tiempo=tiempo;
         rec._descripción=descripcion;
-    }
-
-    public void Enviar(View enviar) {
-
          class tareaAsincronicaRecetas extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
                 try {
                     String MiPc = "10.0.2.2:50197";
                     URL Ruta = new URL("http://" + MiPc + "/api/InsertarReceta");
-
-                    HttpURLConnection urlConnection = (HttpURLConnection) Ruta.openConnection();
-                    OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-
-                    Gson gson = new Gson();
-                    String json = gson.toJson(rec);
-
-                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
-                    writer.write(json);
-                    writer.flush();
-                    writer.close();
-                    out.close();
-
-                    urlConnection.connect();
+                    HttpURLConnection conn = (HttpURLConnection) Ruta.openConnection();
+                    conn.setRequestMethod("POST");
+                    conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+                    conn.setRequestProperty("Charset", "UTF-8");
+                    conn.setRequestProperty("Accept", "application/json");
+                    conn.setDoOutput(true);
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    JSONObject json = new JSONObject();
+                    json.put("Nombre", rec._nombre);
+                    json.put("Tiempo", rec._tiempo);
+                    json.put("Descripcion", rec._descripción);
+                    os.write(json.toString().getBytes(StandardCharsets.UTF_8));
+                    Log.d("DatosNuevos",rec._nombre);
+                    Log.i("JSON", json.toString());
+                    os.flush();
+                    os.close();
+                    conn.disconnect();
                 } catch (Exception error) {
                     Log.d("error", "es" + error.getMessage());
                 }
@@ -86,12 +91,10 @@ public class CrearReceta extends AppCompatActivity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
             }
-
-
         }
 
-        Intent intent = new Intent(CrearReceta.this, Home.class);
-        startActivity(intent);
+        tareaAsincronicaRecetas tarea = new tareaAsincronicaRecetas();
+        tarea.execute();
     }
 
 
