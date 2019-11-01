@@ -32,6 +32,38 @@ public class Recetas  {
     public String _IdDificiltad;
     public String _IdUsuario;
 
+    public void setid(int _id) {
+        this._id = _id;
+    }
+
+    public void setnombre(String _nombre) {
+        this._nombre = _nombre;
+    }
+
+    public void setdescripción(String _descripción) {
+        this._descripción = _descripción;
+    }
+
+    public void setcalorías(String _calorías) {
+        this._calorías = _calorías;
+    }
+
+    public void settiempo(String _tiempo) {
+        this._tiempo = _tiempo;
+    }
+
+    public void setimagen(String _imagen) {
+        this._imagen = _imagen;
+    }
+
+    public void setIdDificiltad(String _IdDificiltad) {
+        this._IdDificiltad = _IdDificiltad;
+    }
+
+    public void setIdUsuario(String _IdUsuario) {
+        this._IdUsuario = _IdUsuario;
+    }
+
     public Recetas(int id, String nombre, String descripción, String  calorías, String tiempo, String imagen, String idDificultad, String idUsuario){
         _id = id;
         _nombre = nombre;

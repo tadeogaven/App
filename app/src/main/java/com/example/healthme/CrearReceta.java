@@ -1,26 +1,40 @@
 package com.example.healthme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telecom.Connection;
 import android.text.style.BackgroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class CrearReceta extends AppCompatActivity {
 
-
     EditText nombre1,descripcion1,tiempo1;
     Context ctx=this;
+    Recetas rec = new Recetas();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,68 +43,57 @@ public class CrearReceta extends AppCompatActivity {
         nombre1=findViewById(R.id.nombrereceta);
         tiempo1=findViewById(R.id.duracion);
 
-    }
-    public void InsertarReceta(View v) {
-
         String nombre, descripcion,tiempo;
 
         nombre=nombre1.getText().toString();
         descripcion=descripcion1.getText().toString();
         tiempo=tiempo1.getText().toString();
-        BackGround b = new BackGround();
-        b.execute(nombre,descripcion,tiempo);
 
+        rec._nombre=nombre;
+        rec._tiempo=tiempo;
+        rec._descripción=descripcion;
     }
-class BackGround extends AsyncTask<String,String,String>{
 
-        @Override
+    public void Enviar(View enviar) {
 
-    protected String doInBackground(String...params){
+         class tareaAsincronicaRecetas extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    String MiPc = "10.0.2.2:50197";
+                    URL Ruta = new URL("http://" + MiPc + "/api/InsertarReceta");
 
-            String nombre1 = params[0];
-            String descripcion1 = params[1];
-            String tiempo1 = params[2];
-            String data="";
-            int tmp;
+                    HttpURLConnection urlConnection = (HttpURLConnection) Ruta.openConnection();
+                    OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
 
-            try {
-                URL url = new URL("http://10.0.3.2/MYCODE/app/register.php");
-                String urlParams = "name="+nombre1+"&descripcion="+descripcion1+"&tiempo="+tiempo1;
+                    Gson gson = new Gson();
+                    String json = gson.toJson(rec);
 
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setDoOutput(true);
-                OutputStream os = httpURLConnection.getOutputStream();
-                os.write(urlParams.getBytes());
-                os.flush();
-                os.close();
-                InputStream is = httpURLConnection.getInputStream();
-                while((tmp=is.read())!=-1){
-                    data+= (char)tmp;
+                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
+                    writer.write(json);
+                    writer.flush();
+                    writer.close();
+                    out.close();
+
+                    urlConnection.connect();
+                } catch (Exception error) {
+                    Log.d("error", "es" + error.getMessage());
                 }
-                is.close();
-                httpURLConnection.disconnect();
-
-                return data;
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-                return "Exception: "+e.getMessage();
-            } catch (IOException e) {
-                e.printStackTrace();
-                return "Exception: "+e.getMessage();
+                return null;
             }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+            }
+
+
         }
 
-    @Override
-    protected void onPostExecute(String s) {
-        if(s.equals("")){
-            s="Data saved successfully.";
-        }
-        Toast.makeText(ctx, s, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(CrearReceta.this, Home.class);
+        startActivity(intent);
     }
 
-
-        }
 
 
 
