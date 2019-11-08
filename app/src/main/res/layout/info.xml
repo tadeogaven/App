@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" y dietas "
+        android:text=" y dietas DE TODO TIPO Y VARIEDAD  "
         android:textSize="30dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"

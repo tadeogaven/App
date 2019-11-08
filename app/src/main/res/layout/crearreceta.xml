@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fondocomidita">
+
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="40dp" />
@@ -14,10 +16,11 @@
         android:layout_gravity="center"
         android:fontFamily="@font/letra_principal"
         android:hint="  Agregar Imagen  "
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:id="@+id/imagenreceta"
         android:backgroundTint="@android:color/holo_blue_light"
         android:background="@drawable/rounded_edittext"
+
         />
     <Space
         android:layout_width="match_parent"
@@ -62,20 +65,31 @@
         android:textSize="50dp" />
 
     <Space
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         />
 
-    <CheckBox
-        android:id="@+id/chbx"
-        android:layout_width="226dp"
-        android:layout_height="77dp"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_edittext"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:fontFamily="@font/letra_principal"
-        android:hint=" Vegetariana "
-        android:textSize="20dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner">
+
+    </Spinner>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerDieta">
+
+    </Spinner>
 
 
     <Space
@@ -94,6 +108,7 @@
         android:onClick="Enviar"
         android:id="@+id/enviar"
         />
+
 
 
 
