@@ -84,9 +84,9 @@ public class FragmentRecetasVerTodas extends Fragment implements View.OnClickLis
                         recetas._nombre = jsonRec.get("Nombre").getAsString();
                         recetas._tiempo = jsonRec.get("Tiempo").getAsString();
                         recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        //recetas._calorías = jsonRec.get("Calorías").getAsString();
+                        recetas._calorías = jsonRec.get("Calorias").getAsString();
                         //recetas._imagen = jsonRec.get("Imagen").getAsString();
-                        //recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
+                       // recetas._IdDificiltad = jsonRec.get("IdDificultad").getAsString();
                         recetas._IdUsuario = jsonRec.get("IdUsuario").getAsString();
                         recetas._descripción = jsonRec.get("Descripcion").getAsString();
                         // recetas._id = jsonRec.get("Id").getAsInt();

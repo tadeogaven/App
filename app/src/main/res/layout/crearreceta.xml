@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 <LinearLayout android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
@@ -49,10 +58,10 @@
         android:backgroundTint="@android:color/holo_blue_light"
         android:fontFamily="@font/letra_principal"
         android:hint="  tiempo  "
-        android:textSize="50dp" />
+        android:textSize="30dp" />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="30dp" />
     <EditText
         android:id="@+id/descripcion"
         android:layout_width="wrap_content"
@@ -62,16 +71,62 @@
         android:backgroundTint="@android:color/holo_blue_light"
         android:fontFamily="@font/letra_principal"
         android:hint="  Descripcion  "
-        android:textSize="50dp" />
+        android:textSize="30dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <EditText
+        android:id="@+id/ingredientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Ingredientes  "
+        android:textSize="30dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <EditText
+        android:id="@+id/calorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:fontFamily="@font/letra_principal"
+        android:hint="  Calorías  "
+        android:textSize="30dp" />
 
     <Space
         android:background="@drawable/rounded_edittext"
         android:backgroundTint="@android:color/holo_blue_light"
         android:fontFamily="@font/letra_principal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         />
 
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        android:text="Enviar"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="50dp"
+        android:onClick="Enviar"
+        android:id="@+id/enviar"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,7 +136,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
         />
 
     <Spinner
@@ -97,19 +152,11 @@
         android:layout_height="40dp"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/letra_principal"
-        android:text="Enviar"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="30dp"
-        android:onClick="Enviar"
-        android:id="@+id/enviar"
-        />
+
 
 
 
 
 </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

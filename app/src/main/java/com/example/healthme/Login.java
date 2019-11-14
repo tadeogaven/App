@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity {
                 Log.d("Valido",passwordUsuario.getText().toString());
 
 
-                Intent intent = new Intent(Login.this, Home.class);
+                Intent intent = new Intent(Login.this, Prev_Receta.class);
                 startActivity(intent);
 
             }else{

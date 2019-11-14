@@ -51,8 +51,8 @@ public class CrearReceta extends AppCompatActivity implements AdapterView.OnItem
     Spinner dificultad1;
     Context ctx=this;
     Recetas rec = new Recetas();
-    String[] dificultad = {"Fácil","Medio","Dificil","Muy Dificil"};
-    String[] dieta = {"Vegetariana","Vegana","Carnivora"};
+    String[] dificultad = {""};
+    String[] dieta = {""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

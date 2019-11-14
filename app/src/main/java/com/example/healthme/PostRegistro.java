@@ -3,17 +3,19 @@ package com.example.healthme;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
-public class Registro extends AppCompatActivity {
+public class PostRegistro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro);
+        setContentView(R.layout.activity_post_registro);
     }
-    void RegistroCompleto_Presionado(View regcompleto){
-        Intent intent = new Intent(Registro.this, PostRegistro.class);
+    void PostLog(View view) {
+        Intent intent = new Intent(PostRegistro.this, Login.class);
         startActivity(intent);
     }
+
 }

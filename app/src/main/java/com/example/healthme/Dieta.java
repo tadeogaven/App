@@ -1,4 +1,4 @@
-import com.example.healthme.Dificultad;
+package com.example.healthme;
 
 public enum Dieta {
     VEGETARIANA, VEGANA, CARNIVORA;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondocomidita">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Que hacer? "
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/letra_principal" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Home"
+        android:text="  Ir a la home  "
+        android:textSize="30dp"
+        android:fontFamily="@font/letra_principal"
+        android:background="@drawable/rounded_button"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="crearReceta"
+        android:text="  Crear una receta  "
+        android:textSize="30dp"
+        android:fontFamily="@font/letra_principal"
+        android:background="@drawable/rounded_button"
+        android:layout_gravity="center_horizontal"
+        />
+</LinearLayout>

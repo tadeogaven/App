@@ -58,6 +58,7 @@ public class adaptadorRecetas extends BaseAdapter {
         Recetas recetaActual = getItem(Position);
         String Nombre = recetaActual._nombre;
         String Tiempo = recetaActual._tiempo;
+        String Calorias = recetaActual._calorías;
         final String Imagen = recetaActual._imagen;
         String  Descripcion = recetaActual._descripción;
 
@@ -65,11 +66,13 @@ public class adaptadorRecetas extends BaseAdapter {
         NombreReceta = (TextView) VistaADevolver.findViewById(R.id.nombre);
         NombreReceta.setText(Nombre);
         TextView TiempoRec;
-        TiempoRec = (TextView) VistaADevolver.findViewById(R.id.tiempo);
-        TiempoRec.setText(Tiempo);
-        TextView Desc;
-        Desc =(TextView) VistaADevolver.findViewById(R.id.desc);
-        Desc.setText(Descripcion);
+       //TiempoRec = (TextView) VistaADevolver.findViewById(R.id.tiempo);
+        //TiempoRec.setText(Tiempo);
+        //TextView Desc;
+        //Desc =(TextView) VistaADevolver.findViewById(R.id.desc);
+        //Desc.setText(Descripcion);
+       // TextView Cal;
+        //Cal= VistaADevolver.findViewById(R.id.calorias);
 
         final ImageView ImagenReceta;
         ImagenReceta = (ImageView) VistaADevolver.findViewById(R.id.imagen);

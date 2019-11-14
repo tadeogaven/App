@@ -43,7 +43,7 @@ public class FragmentReceta_Detalle extends Fragment {
         nombre = vistaADevolver.findViewById(R.id.nombre);
         tiempo = vistaADevolver.findViewById(R.id.tiempo);
         dificultad = vistaADevolver.findViewById(R.id.dificultad);
-        //calorias = vistaADevolver.findViewById(R.id.calorias);
+        calorias = vistaADevolver.findViewById(R.id.calorias);
         //usuario = vistaADevolver.findViewById(R.id.usuario);
         descripcion = vistaADevolver.findViewById(R.id.descripcion);
 
@@ -53,7 +53,7 @@ public class FragmentReceta_Detalle extends Fragment {
         nombre.setText(receta._nombre);
         tiempo.setText(receta._tiempo);
         dificultad.setText(receta._IdDificiltad);
-        //calorias.setText(receta._calorías);
+        calorias.setText(receta._calorías);
         //usuario.setText(receta._IdUsuario);
 
 
