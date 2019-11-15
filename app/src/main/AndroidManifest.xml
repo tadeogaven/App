@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PostRegistro"></activity>
+        <activity android:name=".VerPerfil"></activity>
+        <activity android:name=".PostRegistro" />
         <activity android:name=".Prev_Receta" />
         <activity android:name=".CrearReceta" />
         <activity android:name=".DetalleUsuario" />

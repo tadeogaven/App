@@ -22,7 +22,10 @@ import com.google.gson.*;
 
 
 public class Login extends AppCompatActivity {
+
+    Usuario user = new Usuario();
     EditText EmailUsuario, passwordUsuario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +118,12 @@ public class Login extends AppCompatActivity {
                 Log.d("Valido",EmailUsuario.getText().toString());
                 Log.d("Valido",passwordUsuario.getText().toString());
 
+                Bundle bundle = new Bundle();
+                bundle.putString("Mail",mail);
+                Log.d("Valido", bundle.toString());
+                Intent in = new Intent(Login.this, VerPerfil.class);
+                in.putExtras(bundle);
+                startActivity(in);
 
                 Intent intent = new Intent(Login.this, Prev_Receta.class);
                 startActivity(intent);

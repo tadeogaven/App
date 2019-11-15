@@ -2,7 +2,7 @@ package com.example.healthme;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable {
+public class Usuario{
     private int _id;
     private String _nombre;
     private String _apellido;

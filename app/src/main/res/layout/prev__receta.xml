@@ -29,10 +29,21 @@
         android:background="@drawable/rounded_button"
         android:layout_gravity="center_horizontal"
         />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ver Perfil"
+        android:onClick="VerPerfil"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="100dp" />
 
     <Button
         android:layout_width="wrap_content"

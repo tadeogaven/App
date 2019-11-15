@@ -10,7 +10,7 @@ public class Prev_Receta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prev__receta);
+        setContentView(R.layout.prev__receta);
     }
 void crearReceta(View view) {
     Intent intent = new Intent(Prev_Receta.this, CrearReceta.class);
@@ -20,4 +20,12 @@ void crearReceta(View view) {
         Intent intent = new Intent(Prev_Receta.this, Home.class);
         startActivity(intent);
     }
+
+    void VerPerfil(View view) {
+        Intent intent = new Intent(Prev_Receta.this, VerPerfil.class);
+        startActivity(intent);
+    }
+
+
+
 }
