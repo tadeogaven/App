@@ -12,10 +12,7 @@ import android.widget.TextView;
 import java.nio.BufferUnderflowException;
 
 
-public class FragmentReceta_Detalle extends Fragment {
-
-
-
+abstract public class FragmentReceta_Detalle extends Fragment implements View.OnClickListener {
     Recetas receta = new Recetas();
     ImageView imagen;
     TextView nombre;
@@ -25,9 +22,11 @@ public class FragmentReceta_Detalle extends Fragment {
     TextView calorias;
     TextView descripcion;
     String nombreReceta;
+    Button botonVerUsuario;
     Home home;
     adaptadorRecetas adapter;
     View vistaADevolver;
+    
 
     public void setNombre(Recetas laReceta) {
         receta = laReceta;
@@ -61,6 +60,10 @@ public class FragmentReceta_Detalle extends Fragment {
         return vistaADevolver;
 
 
+    }
+
+    void setBotonVerUsuario(View v){
+        receta.getIdUsuario();
     }
 
 
