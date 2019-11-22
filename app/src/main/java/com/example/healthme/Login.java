@@ -119,9 +119,9 @@ public class Login extends AppCompatActivity {
                 Log.d("Valido",passwordUsuario.getText().toString());
 
                 Bundle bundle = new Bundle();
-                bundle.putString("Mail",mail);
                 Log.d("Valido", bundle.toString());
                 Intent in = new Intent(Login.this, VerPerfil.class);
+                bundle.putString("Mail",mail);
                 in.putExtras(bundle);
                 startActivity(in);
 

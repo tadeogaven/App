@@ -24,6 +24,9 @@ void crearReceta(View view) {
     void VerPerfil(View view) {
         Intent intent = new Intent(Prev_Receta.this, VerPerfil.class);
         startActivity(intent);
+        //VerPerfil.tareaAsincronicaUsuario tarea = new VerPerfil().new tareaAsincronicaUsuario();
+       // tarea.execute();
+
     }
 
 

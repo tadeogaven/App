@@ -6,14 +6,15 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="119dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/iconuser"/>
+        android:src="@drawable/iconuser" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Mail:"
         android:id="@+id/Mail"
         android:textSize="30dp"
         />
@@ -21,12 +22,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Usuario:"
         android:id="@+id/NombreUsuario"
         android:textSize="30dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Nombre:"
         android:id="@+id/Nombre"
         android:textSize="30dp"
         />
@@ -34,6 +37,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Apellido:"
         android:id="@+id/Apellido"
         android:textSize="30dp"
         />
