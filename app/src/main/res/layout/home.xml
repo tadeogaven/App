@@ -5,21 +5,6 @@
     android:orientation="vertical"
     android:background="@drawable/fondocomidita">
 
-   <RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <EditText android:id="@+id/Buscar"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:hint="type to filter"
-            android:inputType="text"
-            android:maxLines="1" />
-        <Button android:id="@+id/Text"
-            android:layout_toRightOf="@id/Buscar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
-
 
     
     <FrameLayout

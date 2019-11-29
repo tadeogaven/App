@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -118,5 +119,11 @@ public  class VerPerfil extends AppCompatActivity {
 
         }
 
+
     }
+    void homePresionado(View v){
+        Intent intent = new Intent(VerPerfil.this, Home.class);
+        startActivity(intent);
+    }
+
 }

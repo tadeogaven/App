@@ -24,13 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="50dp"
+        android:fontFamily="@font/letra_principal"
         android:id="@+id/nombre"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/descripcion"
-        android:textSize="40dp"
+        android:textSize="30dp"
+        android:fontFamily="@font/letra_principal"
         />
 
     <LinearLayout
@@ -46,6 +48,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tiempo"
             android:textSize="40dp"
+            android:fontFamily="@font/letra_principal"
             />
             <Space
                 android:layout_width="10dp"
@@ -54,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="40dp"
+            android:fontFamily="@font/letra_principal"
             android:text="minutos"/>
         </LinearLayout>
         <LinearLayout
@@ -65,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/calorias"
+            android:fontFamily="@font/letra_principal"
             android:textSize="40dp"
             />
             <Space
@@ -74,22 +79,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="calorías"
+            android:fontFamily="@font/letra_principal"
             android:textSize="40dp"/>
         </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="30dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/dificultad"
-            android:textSize="20dp"/>
-
-        <Button
+            android:text="Datos del Usuario"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="50dp"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver Usaurio"
-            android:onClick="VerUsuario"/>
+            android:id="@+id/NombreUsuarioRec"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombreUs"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/apellidoUs"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Mail"
+            android:fontFamily="@font/letra_principal"
+            android:textSize="40dp"/>
+
+
     </LinearLayout>
 
 </LinearLayout>

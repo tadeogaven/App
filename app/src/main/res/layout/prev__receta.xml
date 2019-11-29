@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ver Perfil"
+        android:textSize="30dp"
         android:onClick="VerPerfil"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/letra_principal"

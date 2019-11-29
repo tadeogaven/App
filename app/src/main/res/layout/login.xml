@@ -31,6 +31,7 @@
         android:fontFamily="@font/letra_principal"
         android:hint="  Contraseña  "
         android:textSize="50dp"
+        android:inputType="textPassword"
         android:backgroundTint="@android:color/holo_blue_light"
         android:id="@+id/password"/>
 

@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Mail:"
         android:id="@+id/Mail"
+        android:fontFamily="@font/letra_principal"
         android:textSize="30dp"
         />
 
@@ -25,12 +26,14 @@
         android:text="Usuario:"
         android:id="@+id/NombreUsuario"
         android:textSize="30dp"
+        android:fontFamily="@font/letra_principal"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre:"
         android:id="@+id/Nombre"
+        android:fontFamily="@font/letra_principal"
         android:textSize="30dp"
         />
 
@@ -38,8 +41,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apellido:"
+        android:fontFamily="@font/letra_principal"
         android:id="@+id/Apellido"
         android:textSize="30dp"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="100dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="homePresionado"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/letra_principal"
+        android:text="Home"
         />
 
 </LinearLayout>

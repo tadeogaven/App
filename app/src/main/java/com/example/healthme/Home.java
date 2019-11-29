@@ -21,26 +21,17 @@ public class Home extends AppCompatActivity {
     FragmentTransaction transacFragment;
     Fragment fragmentRecetasPorNombre;
     Fragment fragmentRecetas;
-    Fragment fragmentReceta_Detalle;
+    Fragment fragmentReceta_Detalle = new FragmentReceta_Detalle();
     adaptadorRecetas adaptadorRecetas;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-
-
-
-
-
         //buscar=findViewById(R.id.Buscar);
-
         adminFragment = getFragmentManager();
         fragmentRecetasPorNombre = new FragmentRecetas();
         fragmentRecetas = new FragmentRecetasVerTodas();
-        fragmentReceta_Detalle = new FragmentReceta_Detalle();
         VerTodas();
     }
 
